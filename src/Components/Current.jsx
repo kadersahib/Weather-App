@@ -2,13 +2,15 @@ import React from "react";
 
 const Current = ({ currentWeather, location }) => {
   return (
-    <div className="container mt-5">
+    <div className="container mt-4">
       <h4 className="text-white text-center">
         Current Weather of {location.name}, {location.region}
       </h4>
-      <div className="row mt-5">
-        {/* Column 1 */}
-        <div className="col-3">
+
+      {/* First Row for weather cards (for larger screens) */}
+      <div className="row mt-4 justify-content-center">
+        {/* Weather Condition Icon */}
+        <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
           <div className="card bg-primary text-white border border-light rounded d-flex flex-column">
             <div
               className="d-flex justify-content-center align-items-center"
@@ -17,85 +19,77 @@ const Current = ({ currentWeather, location }) => {
               <img
                 style={{ height: "100px", width: "100px" }}
                 src={currentWeather.condition.icon}
-                className="card-img-top"
                 alt="Weather condition"
               />
             </div>
-            <div className="card-body d-flex flex-grow-1 align-items-center justify-content-center">
-              <h5 className="card-title">{currentWeather.condition.text}</h5>
+            <div className="card-body text-center">
+              <h5>{currentWeather.condition.text}</h5>
             </div>
           </div>
         </div>
 
-        {/* Column 2 */}
-        <div className="col-3">
-          <div className="card bg-primary text-white border border-light rounded d-flex flex-column">
-            <div className="card-body d-flex flex-grow-1 align-items-center justify-content-center">
-              <h5 className="card-title">
-                Temp in °C: {currentWeather.temp_c}
-              </h5>
+        {/* Temperature in Celsius */}
+        <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div className="card bg-primary text-white border border-light rounded d-flex flex-column text-center">
+            <div className="card-body">
+              <h5>Temp in °C: {currentWeather.temp_c}</h5>
             </div>
           </div>
         </div>
-        {/* Column 3 */}
-        <div className="col-3">
-          <div className="card bg-primary text-white border border-light rounded d-flex flex-column">
-            <div className="card-body d-flex flex-grow-1 align-items-center justify-content-center">
-              <h5 className="card-title">
-                Temp in °F: {currentWeather.temp_f}
-              </h5>
+
+        {/* Temperature in Fahrenheit */}
+        <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div className="card bg-primary text-white border border-light rounded d-flex flex-column text-center">
+            <div className="card-body">
+              <h5>Temp in °F: {currentWeather.temp_f}</h5>
             </div>
           </div>
         </div>
-        {/* Column 4 */}
-        <div className="col-3">
-          <div className="card bg-primary text-white border border-light rounded d-flex flex-column">
-            <div className="card-body d-flex flex-grow-1 align-items-center justify-content-center">
-              <h5 className="card-title">
-                Humidity: {currentWeather.humidity}%
-              </h5>
+
+        {/* Humidity */}
+        <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div className="card bg-primary text-white border border-light rounded d-flex flex-column text-center">
+            <div className="card-body">
+              <h5>Humidity: {currentWeather.humidity}%</h5>
             </div>
           </div>
         </div>
       </div>
-      <div className="row mt-4">
-        {/* Column 1 */}
-        <div className="col-3">
-          <div className="card bg-primary text-white border border-light rounded d-flex flex-column">
-            <div className="card-body d-flex flex-grow-1 align-items-center justify-content-center">
-              <h5 className="card-title">
-                Wind Degree: {currentWeather.wind_degree}°
-              </h5>
+
+      {/* Second Row for additional weather details */}
+      <div className="row mt-4 justify-content-center">
+        {/* Wind Degree */}
+        <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div className="card bg-primary text-white border border-light rounded d-flex flex-column text-center">
+            <div className="card-body">
+              <h5>Wind Degree: {currentWeather.wind_degree}</h5>
             </div>
           </div>
         </div>
-        {/* Column 2 */}
-        <div className="col-3">
-          <div className="card bg-primary text-white border border-light rounded d-flex flex-column">
-            <div className="card-body d-flex flex-grow-1 align-items-center justify-content-center">
-              <h5 className="card-title">
-                Wind Dir: {currentWeather.wind_dir}
-              </h5>
+
+        {/* Wind Direction */}
+        <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div className="card bg-primary text-white border border-light rounded d-flex flex-column text-center">
+            <div className="card-body">
+              <h5>Wind Dir: {currentWeather.wind_dir}</h5>
             </div>
           </div>
         </div>
-        {/* Column 3 */}
-        <div className="col-3">
-          <div className="card bg-primary text-white border border-light rounded d-flex flex-column">
-            <div className="card-body d-flex flex-grow-1 align-items-center justify-content-center">
-              <h5 className="card-title">
-                Wind Speed (kph): {currentWeather.wind_kph}
-              </h5>
+
+        {/* Wind in kph */}
+        <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div className="card bg-primary text-white border border-light rounded d-flex flex-column text-center">
+            <div className="card-body">
+              <h5>Wind kph: {currentWeather.wind_kph}</h5>
             </div>
           </div>
         </div>
-        {/* Column 4 */}
-        <div className="col-3">
-          <div className="card bg-primary text-white border border-light rounded d-flex flex-column">
-            <div className="card-body d-flex flex-grow-1 align-items-center justify-content-center">
-              <h5 className="card-title">
-                Wind Speed (mph): {currentWeather.wind_mph}
-              </h5>
+
+        {/* Wind in mph */}
+        <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div className="card bg-primary text-white border border-light rounded d-flex flex-column text-center">
+            <div className="card-body">
+              <h5>Wind mph: {currentWeather.wind_mph}</h5>
             </div>
           </div>
         </div>

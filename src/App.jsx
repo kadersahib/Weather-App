@@ -64,12 +64,12 @@ const App = () => {
   };
 
   return (
-    <div className="container p-5 rounded mt-5 bg-primary">
+    <div className="container p-3 p-md-5 rounded mt-3 mt-md-5 bg-primary">
       <input
         type="text"
         className="form-control"
         placeholder="Enter City Name"
-        style={{ width: "700px", margin: "0 auto" }}
+        style={{ width: "100%", maxWidth: "700px", margin: "0 auto" }}
         value={ClickedCity} // Control the input field value with city state
         onChange={(e) => {
           setCity(e.target.value);
@@ -84,7 +84,7 @@ const App = () => {
 
       {/* Show loading spinner */}
       {loading && (
-        <div className="text-center">
+        <div className="text-center mt-3">
           <div className="spinner-border text-light" role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
@@ -96,14 +96,15 @@ const App = () => {
         <div
           className="mx-auto mt-3"
           style={{
-            width: "700px",
+            width: "100%",
+            maxWidth: "700px",
           }}
         >
           {cityNames.map((city, index) => {
             return (
               <div
                 key={index}
-                className="text-center bg-info rounded p-1 bg-opacity-10 border border-white border-opacity-25 text-white mt-2"
+                className="text-center bg-info rounded p-2 bg-opacity-10 border border-white border-opacity-25 text-white mt-2"
                 style={{ cursor: "pointer" }}
                 onClick={() => {
                   handleSelectedCity(city);
