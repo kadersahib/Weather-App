@@ -14,10 +14,10 @@ const App = () => {
   const [location, setLocation] = useState();
   const [loading, setLoading] = useState(false); // Add loading state
 
-  const autoCompURL = `https://api.weatherapi.com/v1/search.json?key=54a7350fe25d4743bae163458241610&q=`;
+  const autoCompURL = `https://api.weatherapi.com/v1/search.json?key=a977e4fe80ea4ef3870144652242510&q=`;
 
   const WeatherURL = (city) =>
-    `https://api.weatherapi.com/v1/forecast.json?key=54a7350fe25d4743bae163458241610&q=${city}&days=7&aqi=no&alerts-no`;
+    `https://api.weatherapi.com/v1/forecast.json?key=a977e4fe80ea4ef3870144652242510&q=${city}&days=7&aqi=no&alerts-no`;
 
   useEffect(() => {
     if (city && city.length > 3) {
